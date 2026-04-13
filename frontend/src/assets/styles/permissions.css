@@ -1,0 +1,186 @@
+/* Permissions Manager Styles */
+.permissions-container {
+  padding: 20px;
+}
+
+.permissions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.permissions-title {
+  color: #d32f2f;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.permissions-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.users-list {
+  background-color: #2d2d2d;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.user-item:hover {
+  background-color: #3d3d3d;
+}
+
+.user-item.active {
+  background-color: #d32f2f;
+}
+
+.user-name {
+  font-weight: 500;
+  color: white;
+}
+
+.user-email {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.user-role-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.role-admin { background-color: #d32f2f; color: white; }
+.role-manager { background-color: #ff9800; color: #1a1a1a; }
+.role-employee { background-color: #2196f3; color: white; }
+
+.permissions-panel {
+  background-color: #2d2d2d;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.module-section {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.module-name {
+  color: #d32f2f;
+  font-size: 18px;
+  margin: 0;
+}
+
+.permissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.permission-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+}
+
+.permission-label {
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.permission-description {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Switch personalizado */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  transition: 0.3s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #d32f2f;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .permissions-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .permissions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .module-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
